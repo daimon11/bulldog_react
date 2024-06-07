@@ -1,0 +1,157 @@
+@import '../../index.scss';
+
+.footer {
+  position: relative;
+
+  &__title {
+    text-align: center;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../img/footer_bg.jpg');
+    background-size: 250%;
+    background-color: rgba(255, 255, 255, 0.1);
+    background-position: -550px -650px;
+    opacity: 0.15;
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #030807;
+    z-index: -2;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__address {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__item_link {
+    position: relative;
+    max-width: 300px;
+    font-style: normal;
+    margin-left: 70px;
+    color: $gold;
+    transition: $transition_buttom;
+
+    &:hover {
+      color: $white;
+    }
+
+    &--tel:hover::after,
+    &--adress:hover::after,
+    &--mail:hover::after {
+      transform: $transform_scale_lil;
+    }
+
+    &--tel::after,
+    &--adress::after,
+    &--mail::after {
+      content: '';
+      position: absolute;
+      top: calc(50% - 25px);
+      left: -70px;
+      width: 50px;
+      height: 50px;
+      background-size: cover;
+      transition: $transition_scale_time;
+    }
+
+    &--tel::after {
+      background-image: url('../../icons/phone.svg');
+    }
+
+    &--adress::after {
+      background-image: url('../../icons/location.svg');
+    }
+
+    &--mail::after {
+      background-image: url('../../icons/mail.svg');
+    }
+
+  }
+
+  &__map {
+    height: 350px;
+    width: 100%;
+    background: gray;
+    margin-bottom: 20px;
+    opacity: 0.85;
+  }
+
+  &__social_links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  &__soc_item {
+    transition: $transition_scale_time;
+
+    &:hover {
+      transform: $transform_scale_lil;
+    }
+  }
+
+  &__soc_link {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+
+    &--type_vk {
+      background-image: url('../../icons/vk.svg');
+    }
+
+    &--type_teleg {
+      background-image: url('../../icons/telegram.svg');
+    }
+
+    &--type_inst {
+      background-image: url('../../icons/insta.svg');
+    }
+  }
+
+  &__copyrigh {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    font-size: 15px;
+  }
+}
+
+[class*="copyrights-pane"] {
+  display: none !important;
+}
