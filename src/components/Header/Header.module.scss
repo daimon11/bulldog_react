@@ -5,9 +5,39 @@
   &__video_container {
     position: absolute;
     width: 100%;
-    height: 826px;
+    height: 100vh;
+    max-height: 45em;
+    min-height: 40em;
     overflow: hidden;
     z-index: -1;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      z-index: -2;
+      background-color: #030807;
+
+      @media (max-width: 1100px) {
+        height: 600px;
+      }
+
+      @media (max-width: 600px) {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      height: 600px;
+      max-height: 45em;
+    }
+
+    @media (max-width: 600px) {
+      height: 400px;
+    }
   }
 
   &__video {
@@ -19,16 +49,6 @@
     object-fit: cover;
     opacity: 0.4;
     z-index: -1;
-  }
-
-  &__video_bac {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -2;
-    background-color: #030807;
   }
 
   &__menu_btn {
@@ -60,6 +80,10 @@
     color: $gold;
     letter-spacing: 0.1em;
     transition: $transition_buttom;
+
+    @media (max-width: 1100px) {
+      display: none;
+    }
   }
 
   &__wrapper {
@@ -72,6 +96,16 @@
     align-items: center;
     font-size: 15px;
     margin-bottom: 50px;
+
+    @media (max-width: 1100px) {
+      font-size: 13px;
+      margin-bottom: 35px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 10px;
+      margin-bottom: 20px;
+    }
   }
 
   &__lang_block {
@@ -85,6 +119,12 @@
 
     &:hover .header__lang_icon {
       transform: $transform_scale;
+    }
+
+    
+    @media (max-width: 600px) {
+      gap: 2px;
+      align-items: center
     }
   }
 
@@ -105,6 +145,16 @@
   &__logo {
     width: 339px;
     margin-right: 25px;
+
+    @media (max-width: 1100px) {
+      width: 260px;
+      margin-right: 18px;
+    }
+
+    @media (max-width: 600px) {
+      max-width: 180px;
+      margin-right: 12px;
+    }
   }
 
   &__lang_icon {
@@ -117,6 +167,14 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+
+    @media (max-width: 1100px) {
+      gap: 15px;
+    }
+
+    @media (max-width: 600px) {
+      gap: 11px;
+    }
   }
 
   &__title_block {
@@ -130,6 +188,15 @@
     position: relative;
     font-size: 90px;
     line-height: 130%;
+
+    @media (max-width: 1100px) {
+      font-size: 65px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 35px;
+      line-height: 120%;
+    }
   }
 
   &__title::before,
@@ -141,6 +208,14 @@
     height: 3px;
     background-color: $white;
     width: 85%;
+
+    @media (max-width: 1100px) {
+      height: 2px;
+    }
+
+    @media (max-width: 600px) {
+      height: 1px;
+    }
   }
 
   &__title:after {
@@ -152,10 +227,14 @@
   }
 
   &__text {
-    max-width: 550px;
+    max-width: 600px;
     line-height: 133%;
     text-align: center;
     color: $gold;
+
+    @media (max-width: 600px) {
+      max-width: 200px;
+    }
   }
 
   &__ctaButton {
@@ -163,6 +242,21 @@
     line-height: 34%;
     letter-spacing: 0.2em;
     transition: $transition_buttom;
+    padding: 25px 40px;
+    border: 3px solid $gold;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-family: 'BulldogFont', sans-serif;
+
+    @media (max-width: 1100px) {
+      padding: 18px 30px;
+      border: 2px solid $gold;
+    }
+
+    @media (max-width: 600px) {
+      padding: 12px 20px;
+      border: 1px solid $gold;
+    }
 
     &:hover {
       background-color: $gold;
@@ -177,6 +271,9 @@
     color: $gold;
     gap: 15px;
 
+    @media (max-width: 600px) {
+      gap: 7px;
+    }
 
     &:hover {
       color: $white;
@@ -191,10 +288,19 @@
     display: flex;
     gap: 5px;
     align-items: flex-end;
+
+    @media (max-width: 600px) {
+      gap: 3px;
+    }
   }
 
   &__rating_ic {
     transition: $transition_scale_time;
+
+    @media (max-width: 600px) {
+      height: 20px;
+      width: 20px;
+    }
   }
 
   &__rating_num {
@@ -204,6 +310,10 @@
   &__rating_text {
     font-size: 15px;
     transition: $transition_buttom;
+
+    @media (max-width: 600px) {
+      font-size: 10px;
+    }
   }
 }
 
@@ -222,8 +332,7 @@
   gap: 15px;
 }
 
-@media (min-width: 768px) {
-  .header {}
+@media (min-width: 1100px) {
 
   .gridContainer {
     grid-template-columns: 50px 1fr 2fr 50px;

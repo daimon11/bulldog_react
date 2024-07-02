@@ -20,8 +20,10 @@ export const Overlay = () => {
     <p
       className={style.header__text}>
       Напитки, меню и атмосфера с английским акцентом</p>
-    <button
-      className={style.header__ctaButton}>Позвонить</button>
+    <a
+      className={style.header__ctaButton}
+      href="tel:+78152260015"
+    >Позвонить</a>
 
     <a
       className={style.header__rating}

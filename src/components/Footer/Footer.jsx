@@ -36,12 +36,12 @@ export const Footer = () => {
 
               <a
                 className={classNames(style.footer__item_link, style['footer__item_link--tel'])}
-                href='tel:88152 260015'>+7 (8152) 26-00-15</a>
+                href='tel:88152260015'>+7 (8152) 26-00-15</a>
 
               <a
                 className={classNames(style.footer__item_link,
                   style['footer__item_link--adress'])}
-                href='/'>г. Мурманск, <span className='line-break'></span>улица Карла Маркса, 48А</a>
+                href='https://yandex.ru/maps/org/bulldog/1146622549/?ll=33.101472%2C68.967541&z=16'>г. Мурманск, <span className='line-break'></span>улица Карла Маркса, 48А</a>
 
               <a
                 className={classNames(style.footer__item_link,
@@ -85,10 +85,6 @@ export const Footer = () => {
             className={style.footer__copyrigh}>
             <p
               className={style.footer__copyrigh_item}>&copy; BulldogPub, 2024</p>
-            <p
-              className={style.footer__copyrigh_item}>Дизайн: Имя дизайнера</p>
-            <p
-              className={style.footer__copyrigh_item}>Контакты: дизайнер@bulldogpub.com</p>
           </div>
         </div>
       </div>

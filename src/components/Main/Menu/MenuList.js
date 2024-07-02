@@ -7,7 +7,7 @@ import ImgLunch from '../../../img/lunch.jpg';
 
 export const menuList = [
   {
-    name: 'Пивное разнообразие',
+    name: '20+ лучших сортов пенного на кранах',
     src: ImgBeer,
     href: '/',
     basic: true,
@@ -31,12 +31,14 @@ export const menuList = [
     name: 'Завтраки',
     src: ImgBreakfast,
     href: '/',
+    // basic: true,
     desc: 'Изображение стола с завтраком',
   },
   {
     name: 'Бизнес-Ланчи',
     src: ImgLunch,
     href: '/',
+    // basic: true,
     desc: 'Изображение стола с обедом',
   },
 ];
