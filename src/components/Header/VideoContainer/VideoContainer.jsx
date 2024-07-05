@@ -12,8 +12,5 @@ export const VideoContainer = () => <div
     <source src={video} type="video/mp4" />
     Your browser does not support the video tag.
   </video>
-  <div
-    className={style.header__video_bac}>
-  </div>
 </div>;
 

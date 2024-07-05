@@ -23,7 +23,7 @@ export const MenuItem = (props) => {
       [style.menu__item, style.menu__item_opt].join(' ')}>
       <a
         className={style.menu__link}
-        href={`./${name}.pdf`}
+        href={`${href}.pdf`}
         target="_blank"
         rel="noreferrer noopener">
         <img

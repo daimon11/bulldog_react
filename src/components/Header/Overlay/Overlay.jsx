@@ -1,8 +1,13 @@
 import style from '../Header.module.scss';
 
 import {
+  ReactComponent as IconBulldog
+} from '../../../icons/bulldog.svg';
+
+import {
   ReactComponent as IconStar
 } from '../../../icons/star.svg';
+
 
 export const Overlay = () => {
   console.log(style);
@@ -12,6 +17,13 @@ export const Overlay = () => {
 
     <div
       className={style.header__title_block}>
+      <IconBulldog
+        alt="Логотип заведения"
+        className={style.header__logo}
+        style={{
+          fill: `${style.gold_color}`
+        }}
+      />
       <h1
         className={`${style.header__title} ${style['header__title--one']}`}
       >Bulldog Pub</h1>

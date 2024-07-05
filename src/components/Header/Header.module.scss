@@ -2,12 +2,16 @@
 
 .header {
 
+  height: 100vh;
+  min-height: 650px;
+
   &__video_container {
     position: absolute;
     width: 100%;
     height: 100vh;
+    min-height: 650px;
     max-height: 45em;
-    min-height: 40em;
+    // min-height: 40em;
     overflow: hidden;
     z-index: -1;
 
@@ -17,12 +21,13 @@
       top: 0;
       left: 0;
       height: 100vh;
+      min-height: 650px;
       width: 100%;
       z-index: -2;
       background-color: #030807;
 
       @media (max-width: 1100px) {
-        height: 600px;
+        // height: 600px;
       }
 
       @media (max-width: 600px) {
@@ -31,8 +36,8 @@
     }
 
     @media (max-width: 1100px) {
-      height: 600px;
-      max-height: 45em;
+      // height: 600px;
+      // max-height: 45em;
     }
 
     @media (max-width: 600px) {
@@ -46,9 +51,18 @@
     left: 0;
     width: 100%;
     height: inherit;
+    min-height: 650px;
     object-fit: cover;
     opacity: 0.4;
     z-index: -1;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 50px - 18px);
+    // height: 100%;
   }
 
   &__menu_btn {
@@ -87,7 +101,7 @@
   }
 
   &__wrapper {
-    padding: 35px 75px;
+    // padding: 35px 75px;
   }
 
   &__topbar {
@@ -95,7 +109,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: 15px;
-    margin-bottom: 50px;
+
 
     @media (max-width: 1100px) {
       font-size: 13px;
@@ -121,7 +135,7 @@
       transform: $transform_scale;
     }
 
-    
+
     @media (max-width: 600px) {
       gap: 2px;
       align-items: center
@@ -135,11 +149,6 @@
   &__lan_name {
     color: $gold;
     transition: $transition_buttom;
-  }
-
-  &__logo_wrapper {
-    display: flex;
-    justify-content: center;
   }
 
   &__logo {
@@ -166,7 +175,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 2vh;
 
     @media (max-width: 1100px) {
       gap: 15px;
@@ -181,7 +190,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
   }
 
   &__title {
@@ -265,11 +273,10 @@
   }
 
   &__rating {
-    display: flex;
+    display: inline-block;
     flex-direction: column;
     align-items: center;
     color: $gold;
-    gap: 15px;
 
     @media (max-width: 600px) {
       gap: 7px;
@@ -286,8 +293,9 @@
 
   &__rating_num_block {
     display: flex;
-    gap: 5px;
+    margin-bottom: 5px;
     align-items: flex-end;
+    justify-content: center;
 
     @media (max-width: 600px) {
       gap: 3px;
@@ -305,11 +313,13 @@
 
   &__rating_num {
     transition: $transition_buttom;
+    display: inline-block;
   }
 
   &__rating_text {
     font-size: 15px;
     transition: $transition_buttom;
+    display: inline-block;
 
     @media (max-width: 600px) {
       font-size: 10px;
