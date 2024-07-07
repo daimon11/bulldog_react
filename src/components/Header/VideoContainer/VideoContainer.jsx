@@ -8,8 +8,11 @@ export const VideoContainer = () => <div
     className={style.header__video}
     autoPlay
     loop
-    muted>
-    <source src={video} type="video/mp4" />
+    muted
+    playsInline>
+    <source
+      src={video}
+      type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 </div>;

@@ -28,17 +28,17 @@ export const menuList = [
     desc: 'Изображение коктейля',
   },
   {
-    name: 'Завтраки',
-    src: ImgBreakfast,
-    href: 'static/media/breakfasts.pdf',
-    // basic: true,
-    desc: 'Изображение стола с завтраком',
-  },
-  {
-    name: 'Бизнес-Ланчи',
+    name: 'Бизнес-Обеды',
     src: ImgLunch,
     href: 'static/media/lunches.pdf',
     // basic: true,
     desc: 'Изображение стола с обедом',
+  },
+  {
+    name: 'Летнее меню',
+    src: ImgBreakfast,
+    href: 'static/media/breakfasts.pdf',
+    // basic: true,
+    desc: 'Изображение стола с завтраком',
   },
 ];

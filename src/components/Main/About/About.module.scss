@@ -39,6 +39,7 @@
     flex-direction: column;
     text-align: justify;
     gap: 25px;
+    margin-bottom: 10px;
 
     @media (max-width: 600px) {
       gap: 15px;
@@ -62,6 +63,7 @@
   }
 
   &__btn_detail {
+    display: none;
     max-width: 300px;
     line-height: 34%;
     letter-spacing: 0.2em;
@@ -73,6 +75,7 @@
     }
 
     @media (max-width: 600px) {
+      padding: 18px 30px;
       align-self: center;
     }
 
