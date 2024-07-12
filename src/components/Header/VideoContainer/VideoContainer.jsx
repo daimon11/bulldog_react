@@ -9,11 +9,10 @@ export const VideoContainer = () => <div
     autoPlay
     loop
     muted
-    playsInline>
-    <source
-      src={video}
-      type="video/mp4" />
-    Your browser does not support the video tag.
+    playsInline
+    poster
+    preload='none'
+    src={video}>
   </video>
 </div>;
 
