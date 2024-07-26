@@ -3,16 +3,19 @@ import classNames from 'classnames';
 
 import style from '../About.module.scss';
 
-export const PhotoItem = (props) => {
-  console.log('props.index', props);
+export const PhotoItem = ({data}) => {
+  console.log('props.index', data.img);
 
-  return <img
-    src={props.src}
-    className={classNames(style.about__pic)} />;
+  return <picture>
+    <source srcSet={data.imgAvif} type='image/avif' />
+    <source srcSet={data.imgWebp} type='image/webp' />
+    <img
+      src={data.img}
+      className={classNames(style.about__pic)} />
+  </picture>;
 };
 
 
 PhotoItem.propTypes = {
-  src: PropTypes.string.isRequired,
-  pos: PropTypes.number.isRequired
+  data: PropTypes.object.isRequired
 };

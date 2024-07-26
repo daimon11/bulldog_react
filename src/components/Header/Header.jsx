@@ -12,7 +12,6 @@ export const Header = () => (
 
     <div className='container'>
 
-
       <Topbar />
       <div className={style.header__container}>
         <Overlay />
