@@ -1,5 +1,6 @@
 @import '../../../var.scss';
 
+
 .about {
 
   margin-bottom: 15px;
@@ -110,7 +111,25 @@
     transition: $transition_scale_time;
 
     &:hover {
-      transform: $transform_scale_lil;
     }
   }
+}
+
+.splide__pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.splide__pagination__page {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.splide__pagination__page.is-active {
+  background-color: green;
 }
