@@ -1,28 +1,28 @@
-import {useEffect} from 'react';
+// import {useEffect} from 'react';
 import style from './Footer.module.scss';
 import classNames from 'classnames';
 
 
 export const Footer = () => {
-  console.log(style);
+  console.log();
 
-  useEffect(() => {
-    ymaps.ready(init);
+  // useEffect(() => {
+  //   ymaps.ready(init);
 
-    function init() {
-      const map = new ymaps.Map('map', {
-        center: [68.96740993150036, 33.10162499999999],
-        zoom: 17
-      });
+  //   function init() {
+  //     const map = new ymaps.Map('map', {
+  //       center: [68.96740993150036, 33.10162499999999],
+  //       zoom: 17
+  //     });
 
-      map.controls.remove('geolocationControl'); // удаляем геолокацию
-      map.controls.remove('searchControl'); // удаляем поиск
-      map.controls.remove('trafficControl'); // удаляем контроль трафика
-      map.controls.remove('typeSelector'); // удаляем тип
-      map.controls.remove('zoomControl'); // удаляем контрол зуммирования
-      map.controls.remove('rulerControl'); // удаляем контрол правил
-    }
-  }, []);
+  //     map.controls.remove('geolocationControl'); // удаляем геолокацию
+  //     map.controls.remove('searchControl'); // удаляем поиск
+  //     map.controls.remove('trafficControl'); // удаляем контроль трафика
+  //     map.controls.remove('typeSelector'); // удаляем тип
+  //     map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+  //     map.controls.remove('rulerControl'); // удаляем контрол правил
+  //   }
+  // }, []);
 
   return (
     <footer className={style.footer}>
@@ -76,10 +76,14 @@ export const Footer = () => {
 
           </div>
 
-          <div
+          {/* <div
             className={style.footer__map}
             id="map">
-          </div>
+          </div> */}
+
+          <iframe
+            className={style.footer__mapFrame}
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3Acd2223474e2ffb6460e3a939766fa31f753faacff0c4f42751af87d60f1b3131&amp;source=constructor"></iframe>
 
           <div
             className={style.footer__copyrigh}>

@@ -220,6 +220,18 @@
     gap: 15px;
     font-size: 15px;
   }
+
+  &__mapFrame {
+
+    height: 500px;
+    width: 100%;
+    opacity: 0.8;
+
+    @media (max-width: 600px) {
+      height: 300px;
+    }
+
+  }
 }
 
 [class*="copyrights-pane"] {

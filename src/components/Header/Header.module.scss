@@ -225,10 +225,14 @@
   }
 
   &__text {
-    max-width: 600px;
+    max-width: 500px;
     line-height: 133%;
     text-align: center;
     color: $gold;
+
+    @media (max-width: 1100px) {
+      max-width: 310px;
+    }
 
     @media (max-width: 600px) {
       max-width: 280px;
