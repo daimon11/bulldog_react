@@ -9,11 +9,15 @@ import {
 import {
   About
 } from './About/About';
+import {
+  Terrace
+} from './Terrace/Terrace';
 
 export const Main = () => (
   <main className={style.main}>
     <Menu />
     <Stocks />
     <About />
+    <Terrace />
   </main>
 );

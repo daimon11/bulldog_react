@@ -5,13 +5,13 @@ import Modal from 'react-modal';
 import classNames from 'classnames';
 import {Splide, SplideSlide, SplideTrack} from '@splidejs/react-splide';
 
-import style from './About.module.scss';
+import style from './Terrace.module.scss';
 
 import {photos} from './PhotoItem/photoList';
 
 import {PhotoItem} from './PhotoItem/PhotoItem';
 
-export const About = () => {
+export const Terrace = () => {
   const [selectedPhoto, setSelectedPhoto] = useState('');
 
   const [isZoomed, setIsZoomed] = useState(false);
@@ -25,10 +25,8 @@ export const About = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
 
   const handleIndexPhoto = (index) => {
-    // setIndexPhoto(index);
     setSelectedPhoto(photos[index].img);
   };
-
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -58,21 +56,19 @@ export const About = () => {
     <div
       className='container'>
 
-      <h2 className='title_size_2'>О нас</h2>
+      <h2 className='title_size_2'>Терраса</h2>
       <div className={style.about__wrapper}>
         <div
           className={style.about__description}>
           <div className={style.about__paragraf_wrapper}>
-            <p className={style.about__text}>
-              Паб &quot;Бульдог&quot; в Мурманске - это ваше идеальное место для наслаждения спортивными трансляциями и изысканной кухней. Современные технологии и классический английский стиль создают уникальную атмосферу для дружеских встреч и романтических свиданий.
-            </p>
-            <p className={style.about__text}>
-              Спортивные трансляции на новом уровне. Наслаждайтесь каждым моментом игры на 8 больших экранах FullHD с современной стерео-системой в компании друзей.
-            </p>
 
             <p className={style.about__text}>
-              Изысканная кухня и широкий ассортимент виски. Отведайте блюда, которые порадуют гурманов, и исследуйте самый большой выбор виски в городе. А специальное хранилище для пива гарантирует идеальный вкус и температуру напитков.
+              Расслабьтесь на уютной террасе паба «Бульдог» с захватывающим панорамным видом на Мурманск и Кольский залив. Наша терраса открыта для гостей в любое время года — здесь вы сможете прекрасно проверсти время как в тёплое лето, так и зимой, любуясь красотами северного города
             </p>
+            <p className={style.about__text}>
+              У нас вы найдёте широкий выбор свежего разливного пива, классические блюда британской кухни, уютную обстановку и гостеприимный персонал.
+            </p>
+
           </div>
         </div>
 
