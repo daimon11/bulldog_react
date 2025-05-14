@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
+import Modal from 'react-modal';
+
 import classNames from 'classnames';
 import {Splide, SplideSlide, SplideTrack} from '@splidejs/react-splide';
 
@@ -7,45 +9,40 @@ import style from './About.module.scss';
 
 import {photos} from './PhotoItem/photoList';
 
-console.log('photos', photos);
-
 import {PhotoItem} from './PhotoItem/PhotoItem';
 
 export const About = () => {
   const [selectedPhoto, setSelectedPhoto] = useState('');
 
-  const [countPhoto, setCountPhoto] = useState(null);
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleImageClick = () => {
+    setIsZoomed(!isZoomed);
+  };
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
 
   const [showFullText, setShowFullText] = useState(false);
 
-  const showPrevPhoto = () => {
-    setCountPhoto((prevIndex) => (prevIndex === 0 ? photos[photos.length - 1] : prevIndex - 1));
-    setSelectedPhoto((prevIndex) => (prevIndex === 0 ? photos[photos.length - 1].img : [prevIndex - 1]));
-  };
-
-  const showNextPhoto = () => {
-    setSelectedPhoto((prevIndex) => (prevIndex === photos.length - 1 ? 0 : prevIndex + 1));
-  };
-
-  console.log('selectedPhoto', selectedPhoto, photos[selectedPhoto]);
-
-
   const handleIndexPhoto = (index) => {
-    console.log('index photo', index);
-    setCountPhoto(index);
-  };
-
-  const handleOpenPhoto = (index) => {
-    console.log('index photo', index);
-    setSelectedPhoto(index);
+    // setIndexPhoto(index);
+    setSelectedPhoto(photos[index].img);
   };
 
   const handleToggleText = () => {
-    console.log('открыть текст');
-    console.log(showFullText);
     setShowFullText(!showFullText);
+  };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedPhoto(null);
+    setIsZoomed(false);
   };
 
   useEffect(() => {
@@ -57,8 +54,9 @@ export const About = () => {
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      document.body.style.overflow = 'auto';
     };
-  }, []);
+  }, [isModalOpen]);
 
   return <article
     className={style.about}>
@@ -71,7 +69,7 @@ export const About = () => {
           className={style.about__description}>
           <div className={style.about__paragraf_wrapper}>
             <p className={style.about__text}>
-              Добро пожаловать в паб &quot;Бульдог&quot; – ваше место для наслаждения спортивными трансляциями и изысканной кухней в Мурманске. Современные технологии и классический английский стиль создают неповторимую атмосферу для дружеских встреч и романтических свиданий.
+              Паб &quot;Бульдог&quot; в Мурманске - это ваше идеальное место для наслаждения спортивными трансляциями и изысканной кухней. Современные технологии и классический английский стиль создают уникальную атмосферу для дружеских встреч и романтических свиданий.
             </p>
             <p className={style.about__text}>
               Спортивные трансляции на новом уровне. Наслаждайтесь каждым моментом игры на 8 больших экранах FullHD с современной стерео-системой в компании друзей.
@@ -115,43 +113,61 @@ export const About = () => {
                 <PhotoItem
                   pos={index}
                   data={item}
-                  handleOpenPhoto={handleOpenPhoto}
                   handleIndexPhoto={handleIndexPhoto} />
               </SplideSlide>)}
           </SplideTrack>
         </Splide>) :
           (<div className={classNames(style.about__photos, style.about__columns)}>
-            {photos.map((item, index) =>
+            {photos.slice(0, 6).map((item, index) =>
               <PhotoItem
                 key={index}
                 pos={index}
                 data={item}
-                handleOpenPhoto={handleOpenPhoto} />
+                handleIndexPhoto={handleIndexPhoto} />
             )}
           </div>)
         }
       </div>
-
     </div>
 
     {selectedPhoto && (
-      <div
-        className={style.about__fullscreenWrap}>
+
+      <Modal
+        isOpen={openModal}
+        onRequestClose={closeModal}
+        contentLabel="Full Screen Photo"
+        style={{
+          overlay: {
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            zIndex: 3,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+          },
+          content: {
+            inset: null,
+            margin: 'auto',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '100px',
+            maxHeight: '100%'
+          }
+        }}
+      >
         <img
-          className={style.about__fullscreenPhoto}
           src={selectedPhoto}
-          alt="Full Screen Photo" />
+          alt="Full Screen Photo"
+          onClick={handleImageClick}
+        />
         <button
+          onClick={closeModal}
           className={style.about__btnClose}
-          onClick={() => setSelectedPhoto(null)}>X</button>
-        <button
-          className={style.about__btnPrev}
-          onClick={showPrevPhoto}>Предыдущая</button>
-        <button
-          className={style.about__btnNext}
-          onClick={showNextPhoto}>Следующая</button>
-      </div>
+        >Х</button>
+      </Modal>
     )}
 
-  </article>;
+  </article >;
 };

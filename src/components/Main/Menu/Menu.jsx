@@ -7,7 +7,9 @@ import {
 } from './MenuItem/MenuItem';
 
 export const Menu = () => (
-  <article className={style.menu}>
+  <article
+    className={style.menu}
+    id='menu'>
     <div className='container'>
       <h2 className='title_size_2'>Меню</h2>
 

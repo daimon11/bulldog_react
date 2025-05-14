@@ -11,7 +11,7 @@
     margin-bottom: 5px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 640px) {
     padding: 20px 10px;
   }
 
@@ -36,7 +36,7 @@
     background-size: cover;
     z-index: -1;
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       background-image: url('../../../img/stocks.jpg');
       background-image: -webkit-image-set(
         url('../../../img/stocks_600.avif') 1x,
@@ -57,7 +57,7 @@
     justify-content: space-between;
     gap: 10%;
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       flex-direction: column;
       gap: 15px;
     }
@@ -80,7 +80,7 @@
       gap: 12px;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       border: 1px solid $gold;
     }
   }
@@ -93,7 +93,7 @@
       border: 2px solid $white; 
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       border: 1px solid $white; 
     }
   }
@@ -137,7 +137,7 @@
       max-width: 290px;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       font-size: 20px;
       max-width: 80%;
     }
@@ -149,10 +149,10 @@
 
   &__item_text,
   &__item_subtext {
-    font-size: 15px;
+    font-size: 18px;
 
     @media (max-width: 1100px) {
-      font-size: 12px;
+      font-size: 15px;
     }
   }
 }

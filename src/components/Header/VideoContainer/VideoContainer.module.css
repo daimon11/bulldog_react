@@ -1,8 +1,0 @@
-// import style from './VideoContainer.module.css';
-
-export const VideoContainer = () => (
-  console.log(style);
-  return (
-    <div></div>
-  );
-);

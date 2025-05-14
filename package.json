@@ -11,6 +11,7 @@
     "babel-loader": "^8.2.3",
     "babel-plugin-named-asset-import": "^0.3.8",
     "babel-preset-react-app": "^10.0.1",
+    "bfj": "^8.0.0",
     "browserslist": "^4.18.1",
     "camelcase": "^6.2.1",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
@@ -39,6 +40,8 @@
     "react-app-polyfill": "^3.0.0",
     "react-dev-utils": "^12.0.1",
     "react-dom": "^18.2.0",
+    "react-draggable": "^4.4.6",
+    "react-modal": "^3.16.1",
     "react-redux": "^9.0.3",
     "react-refresh": "^0.11.0",
     "react-slick": "^0.30.2",
@@ -63,7 +66,8 @@
     "start": "node scripts/start.js --silent",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "comp": "hygen create component"
+    "comp": "hygen create component",
+    "extract-critical": "node extractCritical.mjs"
   },
   "eslintConfig": {
     "extends": [
@@ -84,6 +88,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-react": "^7.24.7",
+    "critical": "^7.1.2",
     "eslint": "^8.53.0",
     "eslint-plugin-react": "^7.34.1",
     "file-loader": "^6.2.0"

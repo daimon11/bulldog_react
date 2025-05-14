@@ -105,7 +105,7 @@
       margin-bottom: 35px;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       font-size: 10px;
       margin-bottom: 20px;
     }
@@ -125,7 +125,7 @@
     }
 
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       gap: 2px;
       align-items: center
     }
@@ -149,7 +149,7 @@
       margin-right: 18px;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       max-width: 250px;
       margin-right: 12px;
     }
@@ -170,7 +170,7 @@
       gap: 15px;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       gap: 11px;
       margin-bottom: 50px;
     }
@@ -192,7 +192,7 @@
       font-size: 65px;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       font-size: 55px;
     }
   }
@@ -211,7 +211,7 @@
       height: 2px;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       height: 1px;
     }
   }
@@ -234,7 +234,7 @@
       max-width: 310px;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       max-width: 280px;
     }
   }
@@ -255,7 +255,7 @@
       border: 2px solid $gold;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       border: 1px solid $gold;
     }
 
@@ -271,7 +271,7 @@
     align-items: center;
     color: $gold;
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       gap: 7px;
     }
 
@@ -290,7 +290,7 @@
     align-items: flex-end;
     justify-content: center;
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       gap: 3px;
       margin-bottom: 3px;
     }
@@ -299,7 +299,7 @@
   &__rating_ic {
     transition: $transition_scale_time;
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       height: 30px;
       width: 30px;
     }
@@ -315,8 +315,37 @@
     transition: $transition_buttom;
     display: inline-block;
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       font-size: 12px;
+    }
+  }
+
+  &__scroll {
+    padding-top: 35px;
+    width: 50px;
+    transition: $transition_scale_time;
+
+    @media (max-width: 1100px) {
+      padding-top: 25px;
+      width: 40px;
+    }
+
+    @media (max-width: 640px) {
+      padding-top: 20px;
+    }
+  }
+
+  &__scroll:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  &__scroll_icon_col {
+    stroke: $gold;
+    stroke-width: 2px;
+
+    @media (max-width: 640px) {
+      stroke-width: 1px;
     }
   }
 }

@@ -1,8 +1,0 @@
-// import style from './Overlay.module.css';
-
-export const Overlay = () => (
-  console.log(style);
-  return (
-    <div></div>
-  );
-);

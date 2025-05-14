@@ -4,18 +4,18 @@ import classNames from 'classnames';
 
 import style from '../About.module.scss';
 
-export const PhotoItem = ({data, handleOpenPhoto}) =>
+export const PhotoItem = ({data, handleIndexPhoto, pos}) =>
   <picture>
     <source srcSet={data.imgAvif} type='image/avif' />
     <source srcSet={data.imgWebp} type='image/webp' />
     <img
       src={data.img}
       className={classNames(style.about__pic)}
-      onClick={() => handleOpenPhoto(data.img)} />
+      onClick={() => handleIndexPhoto(pos)} />
   </picture>;
 
 PhotoItem.propTypes = {
   data: PropTypes.object.isRequired,
-  handleOpenPhoto: PropTypes.func.isRequired,
+  handleIndexPhoto: PropTypes.func.isRequired,
   pos: PropTypes.number.isRequired,
 };
