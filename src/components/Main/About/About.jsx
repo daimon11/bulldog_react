@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react';
 
 import Modal from 'react-modal';
 
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import classNames from 'classnames';
 import {Splide, SplideSlide, SplideTrack} from '@splidejs/react-splide';
 
@@ -40,10 +43,49 @@ export const About = () => {
     setIsZoomed(false);
   };
 
+  const notify = () => {
+    toast.info(
+      <div>
+        У нас новая система лояльности!{' '}
+        <a
+          href="https://t.me/your_telegram"
+          target="_blank" rel="noopener noreferrer"
+          style={{
+            color: 'var(--gold)',
+            textDecoration: 'underline',
+          }}>
+          Подписывайтесь на наш Telegram
+        </a>, чтобы узнать больше!
+      </div>,
+      {
+        position: 'top-right',
+        autoClose: 7000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        style: {
+          backgroundColor: 'var(--black)', // Цвет фона
+          color: 'white', // Цвет текста
+          padding: '16px', // Внутренние отступы
+          borderRadius: '8px', // Закругленные углы
+          fontSize: '16px', // Размер шрифта
+        },
+      }
+    );
+  };
+
   useEffect(() => {
+    notify();
+
     const handleResize = () => {
       setIsMobile(window.innerWidth < 600);
     };
+
+    // useEffect(() => {
+
+    // }, []);
 
     window.addEventListener('resize', handleResize);
 
@@ -108,6 +150,9 @@ export const About = () => {
           </div>)
         }
       </div>
+
+      <ToastContainer />
+
     </div>
 
     {selectedPhoto && (

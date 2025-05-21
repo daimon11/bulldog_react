@@ -1,5 +1,6 @@
 import style from './Stocks.module.scss';
 
+
 export const Stocks = () => <article className={style.stocks}>
   <div className='container'>
     <h2 className='visually-hidden'>Акции</h2>
@@ -41,7 +42,7 @@ export const Stocks = () => <article className={style.stocks}>
           </p>
           <p
             className={style.stocks__item_text}>
-            скидка от 25000 ₽
+            скидка от 30000 ₽
           </p>
         </li>
 

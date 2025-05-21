@@ -8,12 +8,6 @@ import placeholderImageAvif from '../../../img/placeholder.avif';
 import video from '../../../video/bulldogpub_murmansk.mp4';
 import videoMob from '../../../video/bulldogpub_murmansk_1000.webm';
 
-// Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
-//   get() {
-//     return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
-//   }
-// });
-
 export const VideoContainer = () => {
   const [videoSrc, setVideoSrc] = useState(video);
   const [isVideoPlaying, setIsVideoPlaying] = useState(true);
