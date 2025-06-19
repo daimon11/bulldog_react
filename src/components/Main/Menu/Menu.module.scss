@@ -23,7 +23,7 @@
     position: relative;
     box-sizing: border-box;
     width: calc(33.33% - 7px);
-    height: 300px;
+    height: 210px;
     cursor: pointer;
     transition: $transition_scale_time;
 
@@ -53,7 +53,7 @@
   }
 
   &__item_opt {
-    height: 250px;
+    height: 210px;
     flex-grow: 1;
     list-style: none;
     width: calc(50% - 5px);

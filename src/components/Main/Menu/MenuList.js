@@ -26,6 +26,12 @@ import ImgLunchAvif from '../../../img/lunch.avif';
 import ImgLunchWebp600 from '../../../img/lunch_600.webp';
 import ImgLunchAvif600 from '../../../img/lunch_600.avif';
 
+import ImgPizza from '../../../img/pizza.jpg';
+import ImgPizzaWebp from '../../../img/pizza.webp';
+import ImgPizzaAvif from '../../../img/pizza.avif';
+import ImgPizzaWebp600 from '../../../img/pizza_600.webp';
+import ImgPizzaAvif600 from '../../../img/pizza_600.avif';
+
 export const menuList = [
   {
     name: '20+ лучших сортов пенного на кранах',
@@ -77,5 +83,15 @@ export const menuList = [
     srcSetAvif600: ImgBreakfastAvif600,
     href: 'static/media/summermenu.pdf',
     desc: 'Изображение стола с завтраком',
+  },
+  {
+    name: 'Пицца',
+    src: ImgPizza,
+    srcSetWebp: ImgPizzaWebp,
+    srcSetAvif: ImgPizzaAvif,
+    srcSetWebp600: ImgPizzaWebp600,
+    srcSetAvif600: ImgPizzaAvif600,
+    href: 'static/media/pizza.pdf',
+    desc: 'Изображение пиццы',
   },
 ];

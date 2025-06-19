@@ -16,7 +16,9 @@ export const MenuItem = (props) => {
   return (
     <li className={basic ?
       style.menu__item :
-      [style.menu__item, style.menu__item_opt].join(' ')}>
+      [style.menu__item, style.menu__item_opt].join(' ')}
+    style={{maxWidth: '100%'}}
+    >
       <a
         className={style.menu__link}
         href={`${href}.pdf`}
